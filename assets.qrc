@@ -1,0 +1,9 @@
+<RCC>
+ <qresource prefix="/assets">
+  <file alias="explosion.mp4">assets/explosion.mp4</file>
+  <file alias="drone.jpg">assets/drone.jpg</file>
+  <file alias="drone_sound.mp3">assets/drone_sound.mp3</file>
+  <file alias="exposion.mp3">assets/exposion.mp3</file>
+  <file alias="critical.mp3">assets/critical.mp3</file>
+ </qresource>
+</RCC>

@@ -1,0 +1,34 @@
+# Local builds and generated CMake files
+build/
+cmake-build-*/
+out/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+build.ninja
+.ninja_*
+compile_commands.json
+CTestTestfile.cmake
+Testing/
+CMakeUserPresets.json
+
+# Local Qt Creator settings
+.qtcreator/
+*.user
+*.user.*
+
+# Compiled output and editor files
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dylib
+*.dll
+*.exe
+.DS_Store
+Thumbs.db
+*~
+*.swp
+*.swo

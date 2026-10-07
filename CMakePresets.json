@@ -1,0 +1,28 @@
+{
+  "version": 3,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 21,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "desktop-debug",
+      "displayName": "Desktop Debug (Qt 3D)",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/desktop-debug",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "EW_BUILD_GUI": "ON",
+        "EW_BUILD_TESTS": "OFF"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "desktop-debug",
+      "configurePreset": "desktop-debug",
+      "targets": ["ew_route_3d"]
+    }
+  ]
+}

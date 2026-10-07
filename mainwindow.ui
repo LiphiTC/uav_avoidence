@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1180</width>
+    <height>1156</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Вариант 3 — Обход зоны РЭБ в 3D</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="mainLayout" stretch="1,0">
+    <item>
+     <widget class="QWidget" name="sceneHost" native="true">
+      <layout class="QVBoxLayout" name="sceneLayout">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="controlsLayout">
+      <item>
+       <widget class="QLabel" name="titleLabel">
+        <property name="text">
+         <string>ОБХОД ЗОНЫ РЭБ — 3D</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="descriptionLabel">
+        <property name="text">
+         <string>X / Y — на земле, Z — высота.
+Поле: 600 × 400 × 600 ед.
+X и Z: 8–592; Y: 8–392.</string>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="startGroup">
+        <property name="title">
+         <string>Старт</string>
+        </property>
+        <layout class="QFormLayout" name="startLayout">
+         <item row="0" column="0">
+          <widget class="QLabel" name="labelStartX">
+           <property name="text">
+            <string>X</string>
+           </property>
+           <property name="buddy">
+            <cstring>lineEditStartX</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLineEdit" name="lineEditStartX">
+           <property name="text">
+            <string>50</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="labelStartY">
+           <property name="text">
+            <string>Y</string>
+           </property>
+           <property name="buddy">
+            <cstring>lineEditStartY</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLineEdit" name="lineEditStartY">
+           <property name="text">
+            <string>350</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="labelStartZ">
+           <property name="text">
+            <string>Z</string>
+           </property>
+           <property name="buddy">
+            <cstring>lineEditStartZ</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QLineEdit" name="lineEditStartZ">
+           <property name="text">
+            <string>100</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="goalGroup">
+        <property name="title">
+         <string>Цель</string>
+        </property>
+        <layout class="QFormLayout" name="goalLayout">
+         <item row="0" column="0">
+          <widget class="QLabel" name="labelGoalX">
+           <property name="text">
+            <string>X</string>
+           </property>
+           <property name="buddy">
+            <cstring>lineEditGoalX</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLineEdit" name="lineEditGoalX">
+           <property name="text">
+            <string>550</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="labelGoalY">
+           <property name="text">
+            <string>Y</string>
+           </property>
+           <property name="buddy">
+            <cstring>lineEditGoalY</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLineEdit" name="lineEditGoalY">
+           <property name="text">
+            <string>50</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="labelGoalZ">
+           <property name="text">
+            <string>Z</string>
+           </property>
+           <property name="buddy">
+            <cstring>lineEditGoalZ</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QLineEdit" name="lineEditGoalZ">
+           <property name="text">
+            <string>280</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="zoneGroup">
+        <property name="title">
+         <string>Сферическая зона РЭБ</string>
+        </property>
+        <layout class="QVBoxLayout" name="zoneLayout">
+         <item>
+          <widget class="QLabel" name="labelZoneCenter">
+           <property name="text">
+            <string>Центр: (300; 200; 200)
+Радиус: 1–180 ед.</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEditRadius">
+           <property name="text">
+            <string>120</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnRoute">
+        <property name="text">
+         <string>Проложить маршрут</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="labelInputError">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="labelRoute">
+        <property name="text">
+         <string>Нажмите «Проложить маршрут».</string>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="labelLength">
+        <property name="text">
+         <string>Длина пути: —</string>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="flightLayout">
+        <item>
+         <widget class="QPushButton" name="btnStartPause">
+          <property name="text">
+           <string>Старт</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnReset">
+          <property name="text">
+           <string>Сброс</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QLabel" name="labelSpeed">
+        <property name="text">
+         <string>Скорость: 80 ед./с</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSlider" name="sliderSpeed">
+        <property name="minimum">
+         <number>10</number>
+        </property>
+        <property name="maximum">
+         <number>200</number>
+        </property>
+        <property name="value">
+         <number>80</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="labelStatus">
+        <property name="text">
+         <string>Готов к полёту</string>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="zoomLayout">
+        <item>
+         <widget class="QPushButton" name="btnZoomIn">
+          <property name="text">
+           <string>Приблизить</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnZoomOut">
+          <property name="text">
+           <string>Отдалить</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnCameraReset">
+        <property name="text">
+         <string>Исходный вид</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Orientation::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>5</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
